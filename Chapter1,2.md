@@ -29,4 +29,4 @@
   - 시스템 환경설정에서 MySQL 서버 시작 및 종료 가능
   - 터미널 : ```sudo /usr/local/mysql/support-files/mysql start```  ```sudo /usr/local/mysql/support-files/mysql stop```
 - Configuration file 설정
-  - /usr/local/mysql 하위에 my.cnf 빈파일 생성 <-- 이 경로는 많이 쓰이니 꼭 기억해두자!
+  - /usr/local/mysql 하위에 my.cnf 빈파일 생성 <-- 이 경로는 많이 쓰이니 꼭 기억해두자! 
