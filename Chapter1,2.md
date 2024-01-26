@@ -18,6 +18,7 @@
 - mac에서 설치하기
   - https://dev.mysql.com/downloads/mysql/
   - os에 맞게 dmg 파일 다운
+    - intel : x86 / apple : ARM
   - 인증방식 : 'Use Strong Password Encryption' 사용 (인터넷 경유해 MySQL 서버를 접속하는 경우)
 - MySQL 디렉토리
   - bin : MySQL 서버, 클라이언트 프로그램, 유틸리티를 위한 디렉터리
@@ -30,3 +31,27 @@
   - 터미널 : ```sudo /usr/local/mysql/support-files/mysql start```  ```sudo /usr/local/mysql/support-files/mysql stop```
 - Configuration file 설정
   - /usr/local/mysql 하위에 my.cnf 빈파일 생성 <-- 이 경로는 많이 쓰이니 꼭 기억해두자! 
+
+### 2.3.2 MySQL 8.0 업그레이드 시 고려 사항
+- 사용자 인증방식 변경
+  - 8.0부터 Caching SHA-2 Authentication 인증 방식이 기본으로 바뀜
+  - 그 이전에는 Native Authentication 인증 방식 사용
+- MySQL 8.0과의 호환성 체크
+  - MySQL 5.7버전에서 손상된 FRM파일, 호환되지 않는 데이터 타입 또는 함수가 있는지 mysqlcheck 유틸리티 이용 권장
+- 외래키 이름 길이 
+  - MySQL 8.0에서는 외래키 이름이 64글자로 제한됨
+- 인덱스 힌트 
+  - 5.x 에서 사용하던 인덱스 힌트가 8.0에서는 오히려 성능 저하를 유발할 수 있으니 성능 테스트는 꼭 하자. 
+- GROUP BY 사용 정렬 옵션
+  - GROUP BY 뒤에 ASC, DESC 사용하고 있다면 제거 필요
+- 파티션 공용 테이블 스페이스 
+  - MySQL 8.x 에서는 파티션의 각 테이블스페이스를 공용 테이블스페이스에 저장할 수 없다.
+  - 공용 테이블 스페이스에 저장된 것이 있다면, ALTER TABLE ... REORGANIZE 명령으로 개별 스페이스 사용하도록 변경 필요
+
+### 2.4 서버 설정
+- MySQL은 일반적으로 설정파일이 하나이다.
+  - 리눅스 포함 유닉스 계열 : my.cnf
+  - 윈도우 계열 : my.ini
+- 설정 파일은 고정 경로가 아니다.
+  - 여러개의 디렉토리를 순차적으로 탐색하면서 처음 발견된 my.cnf 사용
+- 
