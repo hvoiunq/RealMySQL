@@ -15,7 +15,7 @@
   - 'mysql.infoschema'@'localhost' : information_schema에 정의된 뷰의 DEFINER로 사용되는 계정
 ### 3.2.2 계정 생성
 - MySQL 8.0 버전부터 계정생성은 CREAT USER, 권한 부여는 GRANT 명령어를 구분해서 사용
-  - GRATE USER 'user'@'host' IDENTIFIED WITH 'mysql_native_password' BY 'password'
+  - ```GRATE USER 'user'@'host' IDENTIFIED WITH 'mysql_native_password' BY 'password'```
 - IDENTIFIED WITH : 인증 방식
   - Caching SHA-2 Pluggable Authentication : 암호화 해시값 생을 위해 SHA-2(256비트) 알고리즘 사용 (MySQL 8.0 기본 인증 방식)
     - 내부적으로 salt키를 활용해 수천 번의 해시 계산을 수행함.
