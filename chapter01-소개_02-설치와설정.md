@@ -83,4 +83,4 @@
  참고
  - Mysql 재설치 등 instance가 제대로 안띄워지는 경우
    - 전체 삭제 > 재부팅 > 재설치(dmg) 진행
-   - 참고 :https://github.com/rangyu/TIL/blob/master/mysql/MySQL-%EC%99%84%EC%A0%84-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B3%A0-%EC%9E%AC%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-(MacOS).md** ** 
+   - 전체 삭제 참고 : [mysql/MySQL-완전-삭제하고-재설치하기-(MacOS).md](https://github.com/rangyu/TIL/blob/master/mysql/MySQL-%EC%99%84%EC%A0%84-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B3%A0-%EC%9E%AC%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-(MacOS).md)
