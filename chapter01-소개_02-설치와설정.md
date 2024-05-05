@@ -78,3 +78,9 @@
 - MySQL 8.0 -> SET PERSIST 명령어
   - 변경된 값을 서버에 즉시 적용하고 mysqld-auto.cnf 파일에 변경 내용을 추가로 기록해둠.
   - 재시동할때 my.cnf + mysqld-auto.cnf 같이 참조해서 시스템 변수가 적용됨.
+
+
+ 참고
+ - Mysql 재설치 등 instance가 제대로 안띄워지는 경우
+   - 전체 삭제 > 재부팅 > 재설치(dmg) 진행
+   - 참고 :https://github.com/rangyu/TIL/blob/master/mysql/MySQL-%EC%99%84%EC%A0%84-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B3%A0-%EC%9E%AC%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-(MacOS).md** ** 
